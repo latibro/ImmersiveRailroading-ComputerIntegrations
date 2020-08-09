@@ -1,0 +1,12 @@
+[
+  {
+    "modid": "immersiverailroading-computerintegrations",
+    "name": "ImmersiveRailroading Computer Integrations",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "authorList": [
+      "Latibro"
+    ],
+    "credits": "Thanks to to people of teams teams behind IR, CC, (incl. CC:T) and OC"
+  }
+]

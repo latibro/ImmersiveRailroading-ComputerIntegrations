@@ -11,9 +11,9 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "1.0"
-group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "0.1.0"
+group = "latibro.immersiverailroading" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "ImmersiveRailroading-ComputerIntegrations"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
@@ -31,6 +31,19 @@ minecraft {
     // simply re-run your setup task after changing the mappings to update your workspace.
     mappings = "snapshot_20171003"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+}
+
+repositories {
+    maven { url = "http://maven.cil.li/" } // OC
+    maven { url = "https://cc.crzd.me/maven/" } // CC
+    maven { url 'https://squiddev.cc/maven/' } // CC:T
+    maven {
+        name = "CurseForge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
+    maven {
+        url = "https://www.cursemaven.com"
+    }
 }
 
 dependencies {
@@ -55,6 +68,16 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    //compile "universal-mod-core:UniversalModCore-0.1.0:1.12.2:forge" // UniversalModCore-0.1.0-1.12.2-forge.jar
+    compile "immersive-railroading:ImmersiveRailroading:1.7.3_1.12.2" // ImmersiveRailroading-1.7.3_1.12.2.jar
+    //compile "track-api:TrackAPI:1.2" // TrackAPI-1.2.jar
+    runtime "track-api:TrackAPI:1.1_1.12" // TrackAPI-1.1_1.12.jar
+
+    compile "li.cil.oc:OpenComputers:MC1.12.2-1.7.+:api"
+    runtime "li.cil.oc:OpenComputers:MC1.12.2-1.7.+"
+
+    compileOnly "dan200.computercraft:ComputerCraft:1.80pr1-build5"
+    runtime "org.squiddev:cc-tweaked-1.12.2:1.89.+"
 }
 
 processResources {
